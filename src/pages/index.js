@@ -94,7 +94,7 @@ class HomeIndex extends React.Component {
                             Currently seeking employment opportunities.
                         </p>
                         <ul className="actions">
-                            <li><a href="#" className="button">Learn More</a></li>
+                            {/* <li><a href="#" className="button">Learn More</a></li> */}
                         </ul>
                     </section>
 
@@ -110,7 +110,7 @@ class HomeIndex extends React.Component {
                         }))} />
 
                         <ul className="actions">
-                            <li><a href="#" className="button">Full Portfolio</a></li>
+                            {/* <li><a href="#" className="button">Full Portfolio</a></li> */}
                         </ul>
                     </section>
 

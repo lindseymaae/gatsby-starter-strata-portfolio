@@ -6,7 +6,6 @@ import Layout from '../components/layout'
 import Gallery from '../components/Gallery'
 
 import thumb01 from '../assets/images/thumbs/01.jpg'
-import thumb02 from '../assets/images/thumbs/02.jpg'
 import thumb03 from '../assets/images/thumbs/03.jpg'
 import thumb04 from '../assets/images/thumbs/04.jpg'
 import thumb05 from '../assets/images/thumbs/05.jpg'
@@ -14,16 +13,16 @@ import thumb06 from '../assets/images/thumbs/06.jpg'
 
 
 import full01 from '../assets/images/fulls/01.jpg'
-import full02 from '../assets/images/fulls/02.jpg'
 import full03 from '../assets/images/fulls/03.jpg'
 import full04 from '../assets/images/fulls/04.jpg'
 import full05 from '../assets/images/fulls/05.jpg'
 import full06 from '../assets/images/fulls/06.jpg'
 import laughing from '../assets/images/fulls/laughing.jpeg'
+import solo from '../assets/images/fulls/solo-logo.png'
 
 const DEFAULT_IMAGES = [
-    { id: '1', src: full01, thumbnail: thumb01, caption: 'Solo Project', description: 'Web application to help non-profits manage and utilize inventory to improve outcomes for clients.'},
-    { id: '2', src: full02, thumbnail: laughing, caption: 'Jokes', description: 'A compilation of jokes told by various people'},
+    { id: '1', src: solo, thumbnail: solo, caption: 'Solo Project', description: 'Web application to help non-profits manage and utilize inventory to improve outcomes for clients.', link: 'https://lindsey-solo-project.herokuapp.com/'},
+    { id: '2', src: laughing, thumbnail: laughing, caption: 'Jokes', description: 'A compilation of jokes told by various people'},
     { id: '3', src: full03, thumbnail: thumb03, caption: 'Photo 3', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'},
     { id: '4', src: full04, thumbnail: thumb04, caption: 'Photo 4', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'},
     { id: '5', src: full05, thumbnail: thumb05, caption: 'Photo 5', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'},
@@ -77,8 +76,8 @@ class HomeIndex extends React.Component {
     }
 
     render() {
-        const siteTitle = "Gatsby Starter - Strata"
-        const siteDescription = "Site description"
+        const siteTitle = "Lindsey Sandberg"
+        const siteDescription = "Personal Portfolio"
 
         return (
             <Layout>
@@ -104,11 +103,12 @@ class HomeIndex extends React.Component {
                     <section id="two">
                         <h2>Recent Work</h2>
 
-                        <Gallery images={DEFAULT_IMAGES.map(({ id, src, thumbnail, caption, description }) => ({
+                        <Gallery images={DEFAULT_IMAGES.map(({ id, src, thumbnail, caption, description, link }) => ({
                             src,
                             thumbnail,
                             caption,
-                            description
+                            description,
+                            link
                         }))} />
 
                         <ul className="actions">
@@ -118,7 +118,7 @@ class HomeIndex extends React.Component {
 
                     <section id="three">
                         <h2>Get In Touch</h2>
-                        <p>The best way to reach me is via email, but feel free to reach out via phone call or LinkedIn too.</p>
+                        <p>The best way to reach me is via email, but feel free to reach out via phone call, LinkedIn, or message me here.</p>
                         <div className="row">
                             <div className="8u 12u$(small)">
                                 <form method="post" action="#">
@@ -145,7 +145,7 @@ class HomeIndex extends React.Component {
                                     </li>
                                     <li>
                                         <h3 className="icon fa-envelope-o"><span className="label">Email</span></h3>
-                                        <a href="#">lmsandberg@stkate.edu</a>
+                                        <a href="https://mail.google.com/mail/">lmsandberg@stkate.edu</a>
                                     </li>
                                 </ul>
                             </div>

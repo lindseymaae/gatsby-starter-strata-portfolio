@@ -69,6 +69,7 @@ class Gallery extends Component {
 
                     <h3>{obj.caption}</h3>
                     <p>{obj.description}</p>
+                    <a href={obj.link}>Website</a>
                 </article>
             );
         });
@@ -80,6 +81,8 @@ class Gallery extends Component {
         );
     }
     render () {
+        console.log(this.props);
+        
         return (
             <div>
                 {this.renderGallery()}

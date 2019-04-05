@@ -133,7 +133,7 @@ class HomeIndex extends React.Component {
 
                     <section id="three">
                         <h2>Get In Touch</h2>
-                        <p>The best way to reach me is via email, but feel free to reach out via phone call, LinkedIn, or message me here.</p>
+                        <p>The best way to reach me is via email, but feel free to reach out via phone call or LinkedIn</p>
                         <div className="row">
                             <div className="8u 12u$(small)">
                                 <form method="post" action="#">

@@ -35,6 +35,9 @@ class HomeIndex extends React.Component {
         this.state = {
             lightboxIsOpen: false,
             currentImage: 0,
+            name: '',
+            email: '',
+            message: '',
         };
 
         this.closeLightbox = this.closeLightbox.bind(this);
@@ -72,7 +75,21 @@ class HomeIndex extends React.Component {
 
         this.gotoNext();
     }
+    handleSubmit = () => {
+        if ((this.state.name === '') || (this.state.email === '') || (this.state.message === '')) {
+            alert('Please ensure the form is filled out entirely. Thank you.');
+            return false;
+        }
+        window.open(`mailto:lmsandberg@stkate.edu?Subject=Show%20of%20Interest&Body=Hello,%20my%20name%20is%20${this.state.name}%20and%20my%20email%20is%20${this.state.email}.%0D%0A%0D%0A${this.state.message}`)
+    };
 
+    handleChange = property => event => {
+        event.preventDefault();
+        this.setState({
+            ...this.state,
+            [property]: event.target.value,
+        });
+    };
     render() {
         const siteTitle = "Lindsey Sandberg"
         const siteDescription = "Personal Portfolio"
@@ -121,13 +138,13 @@ class HomeIndex extends React.Component {
                             <div className="8u 12u$(small)">
                                 <form method="post" action="#">
                                     <div className="row uniform 50%">
-                                        <div className="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
-                                        <div className="6u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Email" /></div>
-                                        <div className="12u"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+                                        <div className="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" onChange={this.handleChange('name')} /></div>
+                                        <div className="6u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Email" onChange={this.handleChange('email')}/></div>
+                                        <div className="12u"><textarea name="message" id="message" placeholder="Message" rows="4" onChange={this.handleChange('message')}></textarea></div>
                                     </div>
                                 </form>
                                 <ul className="actions">
-                                    <li><input type="submit" value="Send Message" /></li>
+                                    <li><input onClick={this.handleSubmit} type="submit" value="Send Message" /></li>
                                 </ul>
                             </div>
                             <div className="4u 12u$(small)">
@@ -143,7 +160,7 @@ class HomeIndex extends React.Component {
                                     </li>
                                     <li>
                                         <h3 className="icon fa-envelope-o"><span className="label">Email</span></h3>
-                                        <a href="https://mail.google.com/mail/">lmsandberg@stkate.edu</a>
+                                        <a href="mailto:lmsandberg@stkate.edu">lmsandberg@stkate.edu</a>
                                     </li>
                                 </ul>
                             </div>
